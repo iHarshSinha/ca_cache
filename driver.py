@@ -1,4 +1,48 @@
 import math
+#ayush part
+#takes in 1 bit of hexadecimal bit and convert it to 4 bits of binary
+def hextobin(s):
+    dic = {
+        '0': '0000', '1': '0001', '2': '0010', '3': '0011',
+        '4': '0100', '5': '0101', '6': '0110', '7': '0111',
+        '8': '1000', '9': '1001', 'A': '1010', 'B': '1011',
+        'C': '1100', 'D': '1101', 'E': '1110', 'F': '1111'
+    }
+    return dic[s.upper()]
+
+
+#iterate through hexadecimal bits to give 32 bit of memory address in binary
+def binaryreturn(s):
+    s = s[2:]
+    binarybits=""
+    for i in range(len(s)):
+        binarybits+=hextobin(s[i])
+
+    return binarybits
+
+#splits the give address into type of memory access and also splits 32bit into tag,index and offset bits
+def identifier(parts,indexbit,tagbit,offsetbit):
+    l = []
+    if parts[0] == 'l':
+        l.append("Load")
+    else:
+        l.append("Store")
+
+    binarybits = binaryreturn(parts[1])
+    print(len(binarybits))
+    i = 0
+    tag = binarybits[i:i+tagbit]
+    i += tagbit
+    index = binarybits[i:i+indexbit]
+    i += indexbit
+    offset = binarybits[i:i+offsetbit]
+    
+    l.append(tag)
+    l.append(index)
+    l.append(offset)
+    
+    return l
+#nipun part
 class Way:
     '''this class represent ways which will actually hold the data in the cache'''
 
@@ -33,7 +77,7 @@ class Set:
             way_obj = Way()
             self.way_list.append(way_obj)
             i=i+1
-
+#my part
 class cache():
     '''this class represent cache level 1'''
 

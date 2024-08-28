@@ -31,6 +31,7 @@ class Set:
         while i < self.way:  #initializing a list of ways for a particular set
             way_obj = Way()
             self.way_list.append(way_obj)
+            i=i+1
 
 
 class Cache:

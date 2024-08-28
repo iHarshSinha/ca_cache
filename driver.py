@@ -1,3 +1,4 @@
+import math
 class Way:
     '''this class represent ways which will actually hold the data in the cache'''
 
@@ -32,7 +33,7 @@ class Set:
             way_obj = Way()
             self.way_list.append(way_obj)
             i=i+1
-import math
+
 class cache():
     '''this class represent cache level 1'''
 

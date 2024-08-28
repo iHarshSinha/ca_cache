@@ -15,7 +15,7 @@ class cache():
         self.index_bits=self.index_bits()
         self.tag_bits=self.tag_bits()
         for i in range(no_of_set):
-            sets.append(set())
+            sets.append(set(associativity))
 
     def offset_bits(self):
         return math.log(self.block_size, 2)
@@ -26,11 +26,17 @@ class cache():
     
     def tag_bits(self):
         return 32 - self.offset_bits() - self.index_bits()
-class set():
-    '''this class represent various sets or lines in the cache'''
-    def __init__(self):
-        self.ways = []
-        for i in range(associativity):
-            self.ways.append(way())
-class way():
-    '''this class represent ways which will actually hold the data in the cache'''
+
+
+def runner(main_cache_object):
+    pass
+
+def main():
+    '''main function which will create the cache object'''
+    '''As we have different sizes of cache, block size and associativity, we will take those info from the user'''
+    size = int(input("Enter the size of cache in bytes: "))
+    block_size = int(input("Enter the block size in bytes: "))
+    associativity = int(input("Enter the associativity: "))
+    main_cache_object = cache(size, block_size, associativity)
+    runner(main_cache_object)
+

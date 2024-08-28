@@ -14,7 +14,7 @@ class Set():
         self.way = ways
         self.list = []      #list for way object
 
-    def addways(self):
+    def addways(self,tag,data):
         i = 0
         while i < self.way:     #initializing a list of ways for a particular set
             way_obj = Way(tag,data)

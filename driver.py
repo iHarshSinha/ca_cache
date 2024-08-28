@@ -32,8 +32,3 @@ class Set:
             way_obj = Way()
             self.way_list.append(way_obj)
             i=i+1
-
-
-class Cache:
-    '''this class represent cache level 1'''
-    pass

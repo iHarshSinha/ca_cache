@@ -32,5 +32,7 @@ Associativity vs Hit Rate
 Key Features:
 
 The x-axis is scaled using powers of 2 to represent various cache sizes and associativity values.
+The value of x axis in cache size vs miss rate is the value of iteration that we are doing from 128 to 4096.
+So bacically 1 represents 128kb , 2 represent 256kb while 4 represent 512kb and so on.
 A legend helps differentiate between the graphs for different trace files.
 
